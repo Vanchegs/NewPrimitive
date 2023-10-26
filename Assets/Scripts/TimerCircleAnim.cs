@@ -6,12 +6,14 @@ namespace Vanchegs
 {
     public class TimerCircleAnim : MonoBehaviour
     {
-        [SerializeField] private Image timerCircleBar;
-        private float maxValue = 40f;
-        private float value;
+        private const float maxValue = 40f;
         
+        [SerializeField] private Image timerCircleBar;
+        
+        private float value;
+                
         private Timer timer;
-
+        
         private void FixedUpdate() => FillDecrease();
 
         private void RestartFillDecreaser() => value = -2;
