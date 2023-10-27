@@ -9,7 +9,9 @@ public class ScoreController : MonoBehaviour
 
     private void Start()
     {
+        scoreModel = new ScoreModel();
         scoreView.SetModel(scoreModel);
+        scoreView.PrimScoreView();
     }
 
     public void Click()
