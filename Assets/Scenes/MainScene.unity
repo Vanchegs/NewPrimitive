@@ -326,11 +326,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b68497e27771f54dacdd834d691749c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPointY: 9
+  spawnPointY: 6
   circlePrefab: {fileID: 5487444717995740920, guid: 6cb22ed3994b17241b5d65522a89d20c, type: 3}
   trianglePrefab: {fileID: -7893064804600431281, guid: d8048c11942c430439ed5b9e88449bcc, type: 3}
   squarePrefab: {fileID: -6755605239525861354, guid: dca38b27abd30db42ae67b5ee5629b02, type: 3}
-  poolCount: 20
+  poolCount: 100
   autoExpand: 0
 --- !u!4 &826023037
 Transform:
@@ -490,9 +490,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1100255897}
   - component: {fileID: 1100255898}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
