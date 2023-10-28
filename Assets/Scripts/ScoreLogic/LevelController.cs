@@ -13,6 +13,7 @@ namespace ScoreLogic
         {
             levelModel = new LevelModel();
             levelView.SetLevelModel(levelModel);
+            levelModel.SetPrimLevel();
             levelView.PrimLevelView();
         }
 

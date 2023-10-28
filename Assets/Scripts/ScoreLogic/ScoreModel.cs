@@ -18,7 +18,6 @@ namespace ScoreLogic
         public void ResetPrimScore()
         {
             PrimScore = 0;
-            NeedPrimScore = 10;
         }
     }
 }

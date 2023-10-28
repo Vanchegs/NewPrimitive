@@ -26,7 +26,7 @@ namespace Vanchegs.PrimitiveLogic
             squarePool = new SquarePool<Primitive>(squarePrefab, transform1, poolCount, autoExpand);
         }
 
-        private void OffPrimitives()
+        public void OffPrimitives()
         {
             circlePool.DisableAll();
             squarePool.DisableAll();

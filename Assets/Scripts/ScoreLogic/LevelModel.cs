@@ -9,9 +9,9 @@ namespace ScoreLogic
             LevelNumber++;
         }
 
-        private void ResetPrimLevel()
+        public void SetPrimLevel()
         {
-            LevelNumber++;
+            LevelNumber = 1;
         }
     }
 }

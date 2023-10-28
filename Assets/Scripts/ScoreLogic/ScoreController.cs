@@ -1,5 +1,6 @@
 using UnityEngine;
 using Vanchegs;
+using Vanchegs.PrimitiveLogic;
 
 namespace ScoreLogic
 {
@@ -7,7 +8,8 @@ namespace ScoreLogic
     {
         [SerializeField] private ScoreView scoreView;
         [SerializeField] private LevelController levelController;
-
+        [SerializeField] private PrimitiveFactory primitiveFactory;
+        
         private ScoreModel scoreModel;
 
         private void Start()
@@ -20,7 +22,7 @@ namespace ScoreLogic
 
         public void Click()
         {
-            if (scoreModel.PrimScore >= scoreModel.NeedPrimScore)
+            if (scoreModel.PrimScore >= scoreModel.NeedPrimScore - 1)
             {
                 UpPrimLevel();
             }
@@ -33,7 +35,9 @@ namespace ScoreLogic
         private void UpPrimLevel()
         {
             scoreModel.UpNeedScore();
+            scoreModel.ResetPrimScore();
             levelController.UpPrimLevelNumber();
+            primitiveFactory.OffPrimitives();
         }
     }
 }

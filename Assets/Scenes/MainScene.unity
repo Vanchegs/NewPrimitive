@@ -1302,8 +1302,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1356,6 +1356,8 @@ GameObject:
   - component: {fileID: 1825280515}
   - component: {fileID: 1825280514}
   - component: {fileID: 1825280516}
+  - component: {fileID: 1825280518}
+  - component: {fileID: 1825280517}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -1376,6 +1378,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreView: {fileID: 1825280516}
+  levelController: {fileID: 1825280518}
+  primitiveFactory: {fileID: 826023036}
 --- !u!4 &1825280515
 Transform:
   m_ObjectHideFlags: 0
@@ -1404,6 +1408,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   primScoreText: {fileID: 892020651}
+--- !u!114 &1825280517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825280513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f863258da12b7b49ad02664a9c363a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelNumberText: {fileID: 1788638641}
+--- !u!114 &1825280518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825280513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 113c9883bb59fcc44a03d23e7d6cb1ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelView: {fileID: 1825280517}
 --- !u!1 &1901157216
 GameObject:
   m_ObjectHideFlags: 0
