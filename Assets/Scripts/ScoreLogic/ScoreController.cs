@@ -1,24 +1,39 @@
 using UnityEngine;
 using Vanchegs;
 
-public class ScoreController : MonoBehaviour
+namespace ScoreLogic
 {
-    [SerializeField] private ScoreView scoreView;
-
-    private ScoreModel scoreModel;
-
-    private void Start()
+    public class ScoreController : MonoBehaviour
     {
-        scoreModel = new ScoreModel();
-        scoreView.SetModel(scoreModel);
-        scoreView.PrimScoreView();
-    }
+        [SerializeField] private ScoreView scoreView;
+        [SerializeField] private LevelController levelController;
 
-    public void Click()
-    {
-        scoreModel.IncrementPrimScore();
-        scoreView.PrimScoreView();
-        EventPack.OnClickScreen?.Invoke();
-        EventPack.OnSwitchToNextLevel?.Invoke();
+        private ScoreModel scoreModel;
+
+        private void Start()
+        {
+            scoreModel = new ScoreModel();
+            scoreModel.UpNeedScore();
+            scoreView.SetViewModel(scoreModel);
+            scoreView.PrimScoreView();
+        }
+
+        public void Click()
+        {
+            if (scoreModel.PrimScore >= scoreModel.NeedPrimScore)
+            {
+                UpPrimLevel();
+            }
+            scoreModel.IncrementPrimScore();
+            scoreView.PrimScoreView();
+            EventPack.OnClickScreen?.Invoke();
+            EventPack.OnSwitchToNextLevel?.Invoke();
+        }
+
+        private void UpPrimLevel()
+        {
+            scoreModel.UpNeedScore();
+            levelController.UpPrimLevelNumber();
+        }
     }
 }

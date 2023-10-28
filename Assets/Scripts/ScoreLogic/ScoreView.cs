@@ -1,19 +1,22 @@
 using TMPro;
 using UnityEngine;
 
-public class ScoreView : MonoBehaviour
+namespace ScoreLogic
 {
-    [SerializeField] private TMP_Text primScoreText;
+    public class ScoreView : MonoBehaviour
+    {
+        [SerializeField] private TMP_Text primScoreText;
 
-    private ScoreModel scoreModel;
+        private ScoreModel scoreModel;
     
-    public void SetModel(ScoreModel scoreModel)
-    {
-        this.scoreModel = scoreModel;
-    }
+        public void SetViewModel(ScoreModel scoreModel)
+        {
+            this.scoreModel = scoreModel;
+        }
 
-    public void PrimScoreView()
-    {
-        primScoreText.text = "" + scoreModel.PrimScore;
+        public void PrimScoreView()
+        {
+            primScoreText.text = "" + scoreModel.PrimScore;
+        }
     }
 }
