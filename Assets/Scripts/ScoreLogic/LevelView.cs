@@ -6,6 +6,7 @@ namespace ScoreLogic
     public class LevelView : MonoBehaviour
     {
         [SerializeField] private TMP_Text levelNumberText;
+        [SerializeField] private TMP_Text bestLevelNumberText;
 
         private LevelModel levelModel;
 
@@ -17,6 +18,7 @@ namespace ScoreLogic
         public void PrimLevelView()
         {
             levelNumberText.text = "" + levelModel.LevelNumber;
+            bestLevelNumberText.text = "" + levelModel.BestLevelNumber;
         }
     }
 }

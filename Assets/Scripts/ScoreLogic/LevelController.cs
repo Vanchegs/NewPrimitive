@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace ScoreLogic
@@ -14,12 +13,14 @@ namespace ScoreLogic
             levelModel = new LevelModel();
             levelView.SetLevelModel(levelModel);
             levelModel.SetPrimLevel();
+            levelModel.CheckPrimBestLevel();
             levelView.PrimLevelView();
         }
 
         public void UpPrimLevelNumber()
         {
             levelModel.IncrementPrimLevel();
+            levelModel.CheckPrimBestLevel();
             levelView.PrimLevelView();
         }
     }

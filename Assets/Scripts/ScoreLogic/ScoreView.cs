@@ -16,7 +16,7 @@ namespace ScoreLogic
 
         public void PrimScoreView()
         {
-            primScoreText.text = "" + scoreModel.PrimScore;
+            primScoreText.text = scoreModel.PrimScore + "/" + scoreModel.NeedPrimScore;
         }
     }
 }

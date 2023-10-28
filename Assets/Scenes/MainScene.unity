@@ -1245,7 +1245,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 356, y: -103.47}
+  m_AnchoredPosition: {x: 334.8, y: -103.47}
   m_SizeDelta: {x: 124.70001, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1788638641
@@ -1421,6 +1421,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelNumberText: {fileID: 1788638641}
+  bestLevelNumberText: {fileID: 1950342921}
 --- !u!114 &1825280518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1553,7 +1554,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 356, y: -203}
+  m_AnchoredPosition: {x: 334.8, y: -203}
   m_SizeDelta: {x: 124.70001, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1950342921
@@ -1610,8 +1611,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0

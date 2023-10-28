@@ -15,8 +15,6 @@ namespace Vanchegs.PrimitiveLogic
         private CirclePool<Primitive> circlePool;
         private TrianglePool<Primitive> trianglePool;
         private SquarePool<Primitive> squarePool; 
-        
-        //[SerializeField] private ScoreCounter scoreCounter;
 
         private void Start()
         {

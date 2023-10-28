@@ -22,10 +22,9 @@ namespace ScoreLogic
 
         public void Click()
         {
-            if (scoreModel.PrimScore >= scoreModel.NeedPrimScore - 1)
-            {
+            if (scoreModel.PrimScore >= scoreModel.NeedPrimScore - 1) 
                 UpPrimLevel();
-            }
+            
             scoreModel.IncrementPrimScore();
             scoreView.PrimScoreView();
             EventPack.OnClickScreen?.Invoke();
