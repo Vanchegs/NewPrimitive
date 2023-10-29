@@ -332,7 +332,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 144, y: -103.47}
+  m_AnchoredPosition: {x: 120, y: -103.47}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &698712649
@@ -843,7 +843,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 144, y: -203}
+  m_AnchoredPosition: {x: 120, y: -203}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1221751497
@@ -1019,7 +1019,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6101860770183575274, guid: 92949f1565017024c8731b84a0be082b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7396434853511072787, guid: 92949f1565017024c8731b84a0be082b, type: 3}
+      propertyPath: m_Color.b
+      value: 0.20784315
+      objectReference: {fileID: 0}
+    - target: {fileID: 7396434853511072787, guid: 92949f1565017024c8731b84a0be082b, type: 3}
+      propertyPath: m_Color.g
+      value: 0.20784315
+      objectReference: {fileID: 0}
+    - target: {fileID: 7396434853511072787, guid: 92949f1565017024c8731b84a0be082b, type: 3}
+      propertyPath: m_Color.r
+      value: 0.20784315
       objectReference: {fileID: 0}
     - target: {fileID: 7670070355473598868, guid: 92949f1565017024c8731b84a0be082b, type: 3}
       propertyPath: m_RootOrder
@@ -1245,7 +1257,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 334.8, y: -103.47}
+  m_AnchoredPosition: {x: 310.8, y: -103.47}
   m_SizeDelta: {x: 124.70001, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1788638641
@@ -1380,6 +1392,8 @@ MonoBehaviour:
   scoreView: {fileID: 1825280516}
   levelController: {fileID: 1825280518}
   primitiveFactory: {fileID: 826023036}
+  curtain: {fileID: 428256621}
+  button: {fileID: 948509147}
 --- !u!4 &1825280515
 Transform:
   m_ObjectHideFlags: 0
@@ -1494,7 +1508,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.3490566, g: 0.3490566, b: 0.3490566, a: 1}
+  m_Color: {r: 0.20754719, g: 0.20754719, b: 0.20754719, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1554,7 +1568,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 334.8, y: -203}
+  m_AnchoredPosition: {x: 310.8, y: -203}
   m_SizeDelta: {x: 124.70001, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1950342921

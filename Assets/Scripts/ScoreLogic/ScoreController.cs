@@ -9,6 +9,9 @@ namespace ScoreLogic
         [SerializeField] private ScoreView scoreView;
         [SerializeField] private LevelController levelController;
         [SerializeField] private PrimitiveFactory primitiveFactory;
+        [SerializeField] private CurtainView curtain;
+        
+        [SerializeField] private GameObject button;
         
         private ScoreModel scoreModel;
 
@@ -18,6 +21,7 @@ namespace ScoreLogic
             scoreModel.UpNeedScore();
             scoreView.SetViewModel(scoreModel);
             scoreView.PrimScoreView();
+            curtain.HideCurtain(2, null);
         }
 
         public void Click()
@@ -33,10 +37,14 @@ namespace ScoreLogic
 
         private void UpPrimLevel()
         {
+            curtain.ShowCurtain(true,null);
+            button.gameObject.SetActive(false);
             scoreModel.UpNeedScore();
             scoreModel.ResetPrimScore();
             levelController.UpPrimLevelNumber();
             primitiveFactory.OffPrimitives();
+            curtain.HideCurtain(2,null);
+            button.gameObject.SetActive(true);
         }
     }
 }
