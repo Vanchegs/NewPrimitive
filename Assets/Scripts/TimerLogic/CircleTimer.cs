@@ -5,8 +5,10 @@ namespace Vanchegs
 {
    public class CircleTimer : MonoBehaviour
    {
+      private const float maxValue = 40f;
+      
       [SerializeField] private Image timerCircleBar;
-      private float maxValue = 40f;
+      
       private float value;
 
       private void FixedUpdate() => FillDecrease();

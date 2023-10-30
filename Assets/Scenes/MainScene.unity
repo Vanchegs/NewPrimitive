@@ -510,7 +510,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8639773480758696890, guid: 1695be10a00aa4b4dacc3d88cb0dfa56, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -160
+      value: -164.5
       objectReference: {fileID: 0}
     - target: {fileID: 8639773480758696890, guid: 1695be10a00aa4b4dacc3d88cb0dfa56, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -679,8 +679,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1476,6 +1476,7 @@ GameObject:
   - component: {fileID: 1825280516}
   - component: {fileID: 1825280518}
   - component: {fileID: 1825280517}
+  - component: {fileID: 1825280519}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -1500,6 +1501,7 @@ MonoBehaviour:
   primitiveFactory: {fileID: 826023036}
   curtain: {fileID: 428256621}
   button: {fileID: 948509147}
+  cleanFlag: 0
 --- !u!4 &1825280515
 Transform:
   m_ObjectHideFlags: 0
@@ -1555,6 +1557,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelView: {fileID: 1825280517}
+--- !u!114 &1825280519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825280513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f0e0ccf64d9282489bead9bb46c9b05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreController: {fileID: 1825280514}
 --- !u!1 &1901157216
 GameObject:
   m_ObjectHideFlags: 0

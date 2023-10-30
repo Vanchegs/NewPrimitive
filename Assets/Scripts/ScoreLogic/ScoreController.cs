@@ -15,6 +15,8 @@ namespace ScoreLogic
         
         private ScoreModel scoreModel;
 
+        public bool cleanFlag;
+
         private void Start()
         {
             scoreModel = new ScoreModel();
@@ -26,7 +28,7 @@ namespace ScoreLogic
 
         public void Click()
         {
-            if (scoreModel.PrimScore >= scoreModel.NeedPrimScore - 1) 
+            if (scoreModel.PrimScore >= scoreModel.NeedPrimScore - 1)
                 UpPrimLevel();
             
             scoreModel.IncrementPrimScore();
@@ -37,14 +39,15 @@ namespace ScoreLogic
 
         private void UpPrimLevel()
         {
-            curtain.ShowCurtain(true,null);
+            curtain.ShowCurtain(true,null);d
             button.gameObject.SetActive(false);
-            scoreModel.UpNeedScore();
             scoreModel.ResetPrimScore();
             levelController.UpPrimLevelNumber();
             primitiveFactory.OffPrimitives();
+            cleanFlag = true;
             curtain.HideCurtain(2,null);
             button.gameObject.SetActive(true);
+            cleanFlag = false;
         }
     }
 }
