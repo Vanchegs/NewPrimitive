@@ -1,18 +1,15 @@
-using System.Timers;
 using UnityEngine.UI;
 using UnityEngine;
 
-namespace Vanchegs
+namespace Vanchegs.TimerLogic
 {
-    public class TimerCircleAnim : MonoBehaviour
+    public class CircleTimer : MonoBehaviour
     {
         private const float maxValue = 40f;
         
         [SerializeField] private Image timerCircleBar;
         
         private float value;
-                
-        private Timer timer;
         
         private void FixedUpdate() => FillDecrease();
 

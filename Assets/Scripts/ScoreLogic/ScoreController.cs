@@ -21,7 +21,7 @@ namespace ScoreLogic
             scoreModel.UpNeedScore();
             scoreView.SetViewModel(scoreModel);
             scoreView.PrimScoreView();
-            curtain.HideCurtain(2, null);
+            curtain.HideCurtain(1, null);
         }
 
         public void Click()
