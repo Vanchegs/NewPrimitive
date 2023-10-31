@@ -39,7 +39,7 @@ namespace ScoreLogic
 
         private void UpPrimLevel()
         {
-            curtain.ShowCurtain(true,null);d
+            curtain.ShowCurtain(true,null);
             button.gameObject.SetActive(false);
             scoreModel.ResetPrimScore();
             levelController.UpPrimLevelNumber();
@@ -47,7 +47,6 @@ namespace ScoreLogic
             cleanFlag = true;
             curtain.HideCurtain(2,null);
             button.gameObject.SetActive(true);
-            cleanFlag = false;
         }
     }
 }

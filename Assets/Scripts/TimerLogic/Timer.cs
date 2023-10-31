@@ -20,11 +20,9 @@ namespace Vanchegs.LevelController
 
         private void FixedUpdate()
         {
-            if (scoreController.cleanFlag)
-            {
-                timerCount = 41;
-                EventPack.OnReloadTimerCoroutine?.Invoke();
-            }
+            if (!scoreController.cleanFlag) return;
+            timerCount = 41;
+            EventPack.OnReloadTimerCoroutine?.Invoke();
         }
 
         private IEnumerator TimerDecreaser()
