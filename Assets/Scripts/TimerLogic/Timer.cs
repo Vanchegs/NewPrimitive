@@ -18,13 +18,6 @@ namespace Vanchegs.LevelController
             StartCoroutine(TimerDecreaser());
         }
 
-        private void FixedUpdate()
-        {
-            if (!scoreController.cleanFlag) return;
-            timerCount = 41;
-            EventPack.OnReloadTimerCoroutine?.Invoke();
-        }
-
         private IEnumerator TimerDecreaser()
         {
             while (true)
@@ -33,6 +26,12 @@ namespace Vanchegs.LevelController
                 if (timerCount == 0)
                 {
                     EventPack.OnReturnToFirstLevel?.Invoke();
+                }
+                
+                if (scoreController.cleanFlag)
+                {
+                    EventPack.OnReloadTimerCoroutine?.Invoke();
+                    timerCount = 41;
                 }
                 yield return new WaitForSecondsRealtime(timerCoolDown);
             }

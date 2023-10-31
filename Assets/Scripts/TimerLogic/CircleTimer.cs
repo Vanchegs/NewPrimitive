@@ -13,7 +13,11 @@ namespace Vanchegs
 
       private void FixedUpdate() => FillDecrease();
 
-      private void RestartFillDecreaser() => value = -2;
+      private void RestartFillDecreaser()
+      {
+         value = -2;
+         FillDecrease();
+      }
 
       private void FillDecrease()
       {
@@ -22,8 +26,16 @@ namespace Vanchegs
          timerCircleBar.fillAmount = fillAmount;
       }
 
-      private void OnEnable() => EventPack.OnReloadTimerCoroutine += RestartFillDecreaser;
+      private void OnEnable()
+      {
+         EventPack.OnReloadTimerCoroutine += RestartFillDecreaser;
+         EventPack.OnReloadTimerCoroutine += RestartFillDecreaser;
+      }
 
-      private void OnDisable() => EventPack.OnReloadTimerCoroutine -= RestartFillDecreaser;
+      private void OnDisable()
+      {
+         EventPack.OnReloadTimerCoroutine -= RestartFillDecreaser;
+         EventPack.OnReloadTimerCoroutine -= RestartFillDecreaser;
+      }
    }
 }
