@@ -42,6 +42,7 @@ namespace ScoreLogic
             scoreModel.ResetPrimScore();
             levelController.UpPrimLevelNumber();
             primitiveFactory.OffPrimitives();
+            EventPack.OnReloadTimerCoroutine?.Invoke();
             curtain.HideCurtain(2,null);
             button.gameObject.SetActive(true);
         }
