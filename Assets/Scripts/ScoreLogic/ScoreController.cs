@@ -15,8 +15,6 @@ namespace ScoreLogic
         
         private ScoreModel scoreModel;
 
-        public bool cleanFlag;
-
         private void Start()
         {
             scoreModel = new ScoreModel();
@@ -44,7 +42,6 @@ namespace ScoreLogic
             scoreModel.ResetPrimScore();
             levelController.UpPrimLevelNumber();
             primitiveFactory.OffPrimitives();
-            cleanFlag = true;
             curtain.HideCurtain(2,null);
             button.gameObject.SetActive(true);
         }

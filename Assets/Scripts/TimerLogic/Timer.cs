@@ -1,40 +1,23 @@
 using System.Collections;
-using ScoreLogic;
+using TMPro;
 using UnityEngine;
 
-namespace Vanchegs.LevelController
+public class Timer : MonoBehaviour
 {
-    public class Timer : MonoBehaviour
-    {
-        [SerializeField] private ScoreController scoreController;
-        
-        private int timerCount;
-        private int timerCoolDown;
-        
-        private void Start()
-        {
-            timerCoolDown = 1;
-            timerCount = 41;
-            StartCoroutine(TimerDecreaser());
-        }
+    [SerializeField] private TMP_Text timerText;
 
-        private IEnumerator TimerDecreaser()
-        {
-            while (true)
-            {
-                timerCount--;
-                if (timerCount == 0)
-                {
-                    EventPack.OnReturnToFirstLevel?.Invoke();
-                }
-                
-                if (scoreController.cleanFlag)
-                {
-                    EventPack.OnReloadTimerCoroutine?.Invoke();
-                    timerCount = 41;
-                }
-                yield return new WaitForSecondsRealtime(timerCoolDown);
-            }
-        }
+    private int timerValue = 40;
+
+    private void Start()
+    {
+        StartCoroutine(TimerDecreaser());
+    }
+
+    private IEnumerator TimerDecreaser()
+    {
+        timerText.text = "" + timerValue;
+        timerValue--;
+        
+        yield return new WaitForSeconds(1);
     }
 }
