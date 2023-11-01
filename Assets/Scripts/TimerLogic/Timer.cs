@@ -10,7 +10,6 @@ public class Timer : MonoBehaviour
     private const int MaxTimerValue = 42;
     
     [SerializeField] private TMP_Text timerText;
-    [SerializeField] private ScoreController scoreController;
     
     private int timerValue = 40;
 
@@ -37,8 +36,7 @@ public class Timer : MonoBehaviour
             else if (timerValue == 0)
             {
                 EventPack.OnReloadTimerCoroutine?.Invoke();
-                EventPack.OnReturnToFirstLevel?.Invoke();
-                scoreController.ResetPrimLevel();
+                EventPack.OnResetOnFirstLevel?.Invoke();
             }
             yield return new WaitForSeconds(1);
         }

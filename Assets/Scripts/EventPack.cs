@@ -9,7 +9,7 @@ namespace Vanchegs
 
         public static Action OnSwitchToNextLevel;
 
-        public static Action OnReturnToFirstLevel;
+        public static Action OnResetOnFirstLevel;
 
         public static Action OnReloadTimerCoroutine;
     }

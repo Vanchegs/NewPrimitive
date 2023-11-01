@@ -732,7 +732,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 838964640}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1629,6 +1629,7 @@ GameObject:
   - component: {fileID: 1825280516}
   - component: {fileID: 1825280518}
   - component: {fileID: 1825280517}
+  - component: {fileID: 1825280519}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -1649,10 +1650,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreView: {fileID: 1825280516}
-  levelController: {fileID: 1825280518}
-  primitiveFactory: {fileID: 826023036}
   curtain: {fileID: 428256621}
-  button: {fileID: 948509147}
+  levelSwitcher: {fileID: 1825280519}
 --- !u!4 &1825280515
 Transform:
   m_ObjectHideFlags: 0
@@ -1708,6 +1707,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelView: {fileID: 1825280517}
+--- !u!114 &1825280519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825280513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b83827b983b91742ab190b32f95ead5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curtain: {fileID: 428256621}
+  primitiveFactory: {fileID: 826023036}
+  button: {fileID: 948509147}
 --- !u!1 &1901157216
 GameObject:
   m_ObjectHideFlags: 0
