@@ -23,5 +23,10 @@ namespace ScoreLogic
             levelModel.CheckPrimBestLevel();
             levelView.PrimLevelView();
         }
+
+        public void ResetPrimLevelNumber()
+        {
+            levelModel.ResetLevelNumber();
+        }
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using ScoreLogic;
 using TMPro;
 using UnityEngine;
 using Vanchegs;
@@ -9,7 +10,8 @@ public class Timer : MonoBehaviour
     private const int MaxTimerValue = 42;
     
     [SerializeField] private TMP_Text timerText;
-
+    [SerializeField] private ScoreController scoreController;
+    
     private int timerValue = 40;
 
     private void Start()
@@ -27,14 +29,16 @@ public class Timer : MonoBehaviour
     {
         while (true)
         {
-            if (timerValue >= 0)
+            if (timerValue > 0)
             {
                 timerValue--;
                 timerText.text = "" + timerValue;
             }
-            else
+            else if (timerValue == 0)
             {
                 EventPack.OnReloadTimerCoroutine?.Invoke();
+                EventPack.OnReturnToFirstLevel?.Invoke();
+                scoreController.ResetPrimLevel();
             }
             yield return new WaitForSeconds(1);
         }

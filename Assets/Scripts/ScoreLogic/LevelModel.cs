@@ -9,6 +9,8 @@ namespace ScoreLogic
 
         public void SetPrimLevel() => LevelNumber = 1;
 
+        public void ResetLevelNumber() => LevelNumber = 1;
+
         public void CheckPrimBestLevel()
         {
             if (LevelNumber > BestLevelNumber - 1)
