@@ -216,7 +216,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7670070355473598868}
-  - component: {fileID: 6161796947158763486}
+  - component: {fileID: 7111766198002113430}
   m_Layer: 0
   m_Name: Curtain
   m_TagString: Untagged
@@ -240,7 +240,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6161796947158763486
+--- !u!114 &7111766198002113430
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6101860770183575274}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e19d26053b81c7408496aa48a91e4d2, type: 3}
+  m_Script: {fileID: 11500000, guid: c73592e7c21f8be45b767e3ff6f90230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   canvasGroup: {fileID: 7127991731085314274}

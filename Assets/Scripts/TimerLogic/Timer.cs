@@ -6,6 +6,8 @@ using Vanchegs;
 
 public class Timer : MonoBehaviour
 {
+    private const int MaxTimerValue = 42;
+    
     [SerializeField] private TMP_Text timerText;
 
     private int timerValue = 40;
@@ -17,7 +19,7 @@ public class Timer : MonoBehaviour
 
     private void RestartTimer()
     {
-        timerValue = 40;
+        timerValue = MaxTimerValue;
         timerText.text = "" + timerValue;
     }
 

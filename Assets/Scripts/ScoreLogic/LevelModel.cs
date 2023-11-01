@@ -11,7 +11,7 @@ namespace ScoreLogic
 
         public void CheckPrimBestLevel()
         {
-            if (LevelNumber > BestLevelNumber)
+            if (LevelNumber > BestLevelNumber - 1)
                 BestLevelNumber = LevelNumber;
         }
     }
