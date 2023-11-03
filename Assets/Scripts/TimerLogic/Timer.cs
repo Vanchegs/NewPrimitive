@@ -7,7 +7,7 @@ using Vanchegs;
 
 public class Timer : MonoBehaviour
 {
-    private const int MaxTimerValue = 42;
+    private const int MaxTimerValue = 40;
     
     [SerializeField] private TMP_Text timerText;
     
@@ -18,8 +18,10 @@ public class Timer : MonoBehaviour
         StartCoroutine(TimerDecreaser());
     }
 
-    private void RestartTimer()
+    public IEnumerator RestartTimer()
     {
+        yield return new WaitForSeconds(1);
+        
         timerValue = MaxTimerValue;
         timerText.text = "" + timerValue;
     }
@@ -35,14 +37,10 @@ public class Timer : MonoBehaviour
             }
             else if (timerValue == 0)
             {
-                EventPack.OnReloadTimerCoroutine?.Invoke();
+                StartCoroutine(RestartTimer());
                 EventPack.OnResetOnFirstLevel?.Invoke();
             }
             yield return new WaitForSeconds(1);
         }
     }
-
-    private void OnEnable() => EventPack.OnReloadTimerCoroutine += RestartTimer;
-
-    private void OnDisable() => EventPack.OnReloadTimerCoroutine -= RestartTimer;
 }

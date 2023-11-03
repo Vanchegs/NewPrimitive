@@ -9,6 +9,7 @@ namespace Vanchegs
         [SerializeField] private CurtainView curtain;
         [SerializeField] private PrimitiveFactory primitiveFactory;
         [SerializeField] private GameObject button;
+        [SerializeField] private Timer timer;
         
         private ScoreController scoreController;
         private LevelController levelController;
@@ -27,7 +28,7 @@ namespace Vanchegs
             levelController.UpPrimLevelNumber();
             primitiveFactory.OffPrimitives();
             curtain.HideCurtain(1, null);
-            EventPack.OnReloadTimerCoroutine?.Invoke();
+            StartCoroutine(timer.RestartTimer());
             button.SetActive(true);
         }
 
@@ -39,7 +40,7 @@ namespace Vanchegs
             levelController.ResetPrimLevelNumber();
             scoreController.ReturnPrimScore();
             curtain.HideCurtain(1,null);
-            EventPack.OnReloadTimerCoroutine?.Invoke();
+            StartCoroutine(timer.RestartTimer());
             button.SetActive(true);
         }
 
