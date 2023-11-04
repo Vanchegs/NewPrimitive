@@ -1,7 +1,10 @@
 using UnityEngine;
+using Vanchegs.Interanl.Scripts.EventSystem;
+using Vanchegs.Interanl.Scripts.PrimitiveLogic.Pools;
+using Vanchegs.Interanl.Scripts.PrimitiveLogic.View;
 using Random = UnityEngine.Random;
 
-namespace Vanchegs.PrimitiveLogic
+namespace Vanchegs.Interanl.Scripts.PrimitiveLogic.Factorys
 {
     public class PrimitiveFactory : MonoBehaviour
     {
@@ -14,15 +17,22 @@ namespace Vanchegs.PrimitiveLogic
 
         private CirclePool<Primitive> circlePool;
         private TrianglePool<Primitive> trianglePool;
-        private SquarePool<Primitive> squarePool; 
+        private SquarePool<Primitive> squarePool;
 
         private void Start()
         {
-            var transform1 = transform;
-            circlePool = new CirclePool<Primitive>(circlePrefab, transform1, poolCount, autoExpand);
-            trianglePool = new TrianglePool<Primitive>(trianglePrefab, transform1, poolCount, autoExpand);
-            squarePool = new SquarePool<Primitive>(squarePrefab, transform1, poolCount, autoExpand);
+            var cacheTransform = transform;
+            
+            circlePool = new CirclePool<Primitive>(circlePrefab, cacheTransform, poolCount, autoExpand);
+            trianglePool = new TrianglePool<Primitive>(trianglePrefab, cacheTransform, poolCount, autoExpand);
+            squarePool = new SquarePool<Primitive>(squarePrefab, cacheTransform, poolCount, autoExpand);
         }
+
+        private void OnEnable() =>
+            EventPack.OnClickScreen += SpawnPrimitive;
+
+        private void OnDisable() =>
+            EventPack.OnClickScreen -= SpawnPrimitive;
 
         public void OffPrimitives()
         {
@@ -48,10 +58,6 @@ namespace Vanchegs.PrimitiveLogic
                     break;
             }
         }
-
-        private void OnEnable() => EventPack.OnClickScreen += SpawnPrimitive;
-        
-        private void OnDisable() => EventPack.OnClickScreen -= SpawnPrimitive;
 
         private void CreateNewCircle()
         {

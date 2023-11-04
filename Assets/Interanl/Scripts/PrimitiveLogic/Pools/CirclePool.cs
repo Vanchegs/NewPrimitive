@@ -2,26 +2,28 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Vanchegs.PrimitiveLogic
+namespace Vanchegs.Interanl.Scripts.PrimitiveLogic.Pools
 {
-    public class TrianglePool<T> where T : MonoBehaviour
+    public class CirclePool<T> where T : MonoBehaviour
     {
-        [SerializeField] private T TrianglePrefab;
-        [SerializeField] private Transform TrianglePoolContainer;
-        [SerializeField] private bool autoExpand;
+        private T CirclePrefab;
+        private Transform CirclePoolContainer;
+        private bool autoExpand;
 
-        private List<T> trianglePool = new();
+        private List<T> circlePool = new();
 
-        public TrianglePool(T prefab, Transform container, int poolSize, bool autoExpand)
+        public CirclePool(T prefab, Transform container, int poolSize, bool autoExpand)
         {
-            if (prefab == null) 
+            if (prefab == null)
                 throw new NullReferenceException(nameof(prefab));
-            this.TrianglePrefab = prefab;
-            
+
+            CirclePrefab = prefab;
+
             if (container == null)
                 throw new NullReferenceException(nameof(container));
-            this.TrianglePoolContainer = container;
-            
+
+            CirclePoolContainer = container;
+
             this.autoExpand = autoExpand;
 
             InitPool(poolSize);
@@ -32,35 +34,39 @@ namespace Vanchegs.PrimitiveLogic
             for (int i = 0; i < poolSize; i++)
                 CreateNewObject(false);
         }
+
         private T CreateNewObject(bool isActiveByDefault)
         {
-            T newObject = GameObject.Instantiate(TrianglePrefab, TrianglePoolContainer);
+            T newObject = GameObject.Instantiate(CirclePrefab, CirclePoolContainer);
+            
             newObject.gameObject.SetActive(isActiveByDefault);
-            trianglePool.Add(newObject);
+            
+            circlePool.Add(newObject);
 
             return newObject;
         }
 
         public bool TryGetFree(out T element)
         {
-            for (int i = 0; i < trianglePool.Count; i++)
+            for (int i = 0; i < circlePool.Count; i++)
             {
-                if (!trianglePool[i].gameObject.activeInHierarchy)
+                if (!circlePool[i].gameObject.activeInHierarchy)
                 {
-                    element = trianglePool[i];
+                    element = circlePool[i];
                     return true;
                 }
             }
+
             element = null;
             return false;
         }
-        
+
         public void DisableAll()
         {
-            foreach (var gameObject in trianglePool)
+            foreach (var gameObject in circlePool)
                 gameObject.gameObject.SetActive(false);
         }
-        
+
         public T GetFree()
         {
             if (TryGetFree(out T element))
@@ -68,7 +74,8 @@ namespace Vanchegs.PrimitiveLogic
                 element.gameObject.SetActive(true);
                 return element;
             }
-            else if (autoExpand)
+
+            if (autoExpand)
                 return CreateNewObject(true);
 
             throw new Exception("There is no free element in pool");

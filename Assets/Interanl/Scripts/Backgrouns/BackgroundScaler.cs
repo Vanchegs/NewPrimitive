@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Vanchegs
+namespace Vanchegs.Interanl.Scripts.Backgrouns
 {
     public sealed class BackgroundScaler : MonoBehaviour
     {

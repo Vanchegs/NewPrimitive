@@ -1,9 +1,8 @@
 using System;
-using UnityEngine;
 
-namespace Vanchegs
+namespace Vanchegs.Interanl.Scripts.EventSystem
 {
-    public sealed class EventPack : MonoBehaviour
+    public sealed class EventPack
     {
         public static Action OnClickScreen;
 

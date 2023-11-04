@@ -1,4 +1,4 @@
-namespace ScoreLogic
+namespace Vanchegs.Interanl.Scripts.ScoreLogic.Score
 {
     public class ScoreModel
     {

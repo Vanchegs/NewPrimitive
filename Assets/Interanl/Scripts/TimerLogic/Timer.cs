@@ -1,46 +1,48 @@
-using System;
 using System.Collections;
-using ScoreLogic;
 using TMPro;
 using UnityEngine;
-using Vanchegs;
+using Vanchegs.Interanl.Scripts.EventSystem;
 
-public class Timer : MonoBehaviour
+namespace Vanchegs.Interanl.Scripts.TimerLogic
 {
-    private const int MaxTimerValue = 40;
-    
-    [SerializeField] private TMP_Text timerText;
-    
-    private int timerValue = 40;
-
-    private void Start()
+    public class Timer : MonoBehaviour
     {
-        StartCoroutine(TimerDecreaser());
-    }
+        private const int MaxTimerValue = 40;
 
-    public IEnumerator RestartTimer()
-    {
-        yield return new WaitForSeconds(1);
-        
-        timerValue = MaxTimerValue;
-        timerText.text = "" + timerValue;
-    }
+        [SerializeField] private TMP_Text timerText;
 
-    private IEnumerator TimerDecreaser()
-    {
-        while (true)
+        private int timerValue = 40;
+
+        private void Start()
         {
-            if (timerValue > 0)
-            {
-                timerValue--;
-                timerText.text = "" + timerValue;
-            }
-            else if (timerValue == 0)
-            {
-                StartCoroutine(RestartTimer());
-                EventPack.OnResetOnFirstLevel?.Invoke();
-            }
+            StartCoroutine(TimerDecreaser());
+        }
+
+        public IEnumerator RestartTimer()
+        {
             yield return new WaitForSeconds(1);
+
+            timerValue = MaxTimerValue;
+            timerText.text = "" + timerValue;
+        }
+
+        private IEnumerator TimerDecreaser()
+        {
+            while (true)
+            {
+                if (timerValue > 0)
+                {
+                    timerValue--;
+                    timerText.text = "" + timerValue;
+                }
+                else if (timerValue == 0)
+                {
+                    StartCoroutine(RestartTimer());
+                    EventPack.OnResetOnFirstLevel?.Invoke();
+                }
+
+                yield return new WaitForSeconds(1);
+            }
         }
     }
 }

@@ -2,26 +2,26 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Vanchegs.PrimitiveLogic
+namespace Vanchegs.Interanl.Scripts.PrimitiveLogic.Pools
 {
-    public class CirclePool<T> where T : MonoBehaviour
+    public class SquarePool<T> where T : MonoBehaviour
     {
-        [SerializeField] private T CirclePrefab;
-        [SerializeField] private Transform CirclePoolContainer;
-        [SerializeField] private bool autoExpand;
+        private T SquarePrefab;
+        private Transform SquarePoolContainer;
+        private bool autoExpand;
 
-        private List<T> circlePool = new();
+        private List<T> squarePool = new();
 
-        public CirclePool(T prefab, Transform container, int poolSize, bool autoExpand)
+        public SquarePool(T prefab, Transform container, int poolSize, bool autoExpand)
         {
-            if (prefab == null) 
+            if (prefab == null)
                 throw new NullReferenceException(nameof(prefab));
-            this.CirclePrefab = prefab;
-            
+            this.SquarePrefab = prefab;
+
             if (container == null)
                 throw new NullReferenceException(nameof(container));
-            this.CirclePoolContainer = container;
-            
+            this.SquarePoolContainer = container;
+
             this.autoExpand = autoExpand;
 
             InitPool(poolSize);
@@ -32,22 +32,23 @@ namespace Vanchegs.PrimitiveLogic
             for (int i = 0; i < poolSize; i++)
                 CreateNewObject(false);
         }
+
         private T CreateNewObject(bool isActiveByDefault)
         {
-            T newObject = GameObject.Instantiate(CirclePrefab, CirclePoolContainer);
+            T newObject = GameObject.Instantiate(SquarePrefab, SquarePoolContainer);
             newObject.gameObject.SetActive(isActiveByDefault);
-            circlePool.Add(newObject);
+            squarePool.Add(newObject);
 
             return newObject;
         }
 
         public bool TryGetFree(out T element)
         {
-            for (int i = 0; i < circlePool.Count; i++)
+            for (int i = 0; i < squarePool.Count; i++)
             {
-                if (!circlePool[i].gameObject.activeInHierarchy)
+                if (!squarePool[i].gameObject.activeInHierarchy)
                 {
-                    element = circlePool[i];
+                    element = squarePool[i];
                     return true;
                 }
             }
@@ -55,13 +56,13 @@ namespace Vanchegs.PrimitiveLogic
             element = null;
             return false;
         }
-        
+
         public void DisableAll()
         {
-            foreach (var gameObject in circlePool)
+            foreach (var gameObject in squarePool)
                 gameObject.gameObject.SetActive(false);
         }
-        
+
         public T GetFree()
         {
             if (TryGetFree(out T element))

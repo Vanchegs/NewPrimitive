@@ -1,8 +1,11 @@
-using ScoreLogic;
 using UnityEngine;
-using Vanchegs.PrimitiveLogic;
+using Vanchegs.Interanl.Scripts.Curtain;
+using Vanchegs.Interanl.Scripts.EventSystem;
+using Vanchegs.Interanl.Scripts.PrimitiveLogic.Factorys;
+using Vanchegs.Interanl.Scripts.ScoreLogic.Score;
+using Vanchegs.Interanl.Scripts.TimerLogic;
 
-namespace Vanchegs
+namespace Vanchegs.Interanl.Scripts.ScoreLogic.Level
 {
     public class LevelSwitcher : MonoBehaviour
     {

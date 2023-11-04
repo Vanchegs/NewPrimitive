@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-namespace ScoreLogic
+namespace Vanchegs.Interanl.Scripts.ScoreLogic.Level
 {
     public class LevelView : MonoBehaviour
     {

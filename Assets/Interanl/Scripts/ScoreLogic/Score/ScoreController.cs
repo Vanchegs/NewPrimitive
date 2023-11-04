@@ -1,7 +1,9 @@
 using UnityEngine;
-using Vanchegs;
+using Vanchegs.Interanl.Scripts.Curtain;
+using Vanchegs.Interanl.Scripts.EventSystem;
+using Vanchegs.Interanl.Scripts.ScoreLogic.Level;
 
-namespace ScoreLogic
+namespace Vanchegs.Interanl.Scripts.ScoreLogic.Score
 {
     public class ScoreController : MonoBehaviour
     {

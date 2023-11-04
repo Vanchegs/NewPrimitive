@@ -2,7 +2,7 @@ using System;
 using DG.Tweening;
 using UnityEngine;
 
-namespace Vanchegs
+namespace Vanchegs.Interanl.Scripts.Curtain
 {
     [SelectionBase]
     [DisallowMultipleComponent]
