@@ -29,6 +29,16 @@ namespace Vanchegs.Interanl.Scripts.ProgressLogic
         private void Start() =>
             StartCoroutine(AutoSave());
 
+        private void OnDisable() =>
+            progress?.Save();
+
+        private void OnDestroy() =>
+            progress?.Save();
+
+        private void OnApplicationQuit() =>
+            progress?.Save();
+
+
         private IEnumerator AutoSave()
         {
             yield return new WaitForSeconds(autoSaveCooldown);

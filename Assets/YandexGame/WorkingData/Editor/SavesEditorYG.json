@@ -1,9 +1,9 @@
 {
-    "idSave": 25,
+    "idSave": 50,
     "isFirstSession": false,
     "language": "ru",
     "promptDone": false,
     "storage": {
-        "bestLevel": 2
+        "bestLevel": 6
     }
 }

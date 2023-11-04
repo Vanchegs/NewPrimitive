@@ -173,7 +173,7 @@ MonoBehaviour:
     thisPlayer:
       rank: 2
       score: 10
-  LocalizationEnable: 0
+  LocalizationEnable: 1
   callingLanguageCheck: 1
   translateMethod: 0
   domainAutoLocalization: com
@@ -183,7 +183,7 @@ MonoBehaviour:
   languages:
     ru: 1
     en: 1
-    tr: 1
+    tr: 0
     az: 0
     be: 0
     he: 0
