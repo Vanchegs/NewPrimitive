@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efa747916aa66674d96ea40ca8a480b2, type: 3}
   m_Name: InfoYG
   m_EditorClassIdentifier: 
-  scopes: 0
+  scopes: 1
   playerPhotoSize: 0
   playerInfoSimulation:
     authorized: 1
@@ -28,10 +28,10 @@ MonoBehaviour:
   durationOfAdSimulation: 0.5
   testErrorOfRewardedAdsInEditor: 0
   saveCloud: 1
-  flush: 1
+  flush: 0
   localSaveSync: 1
-  saveCloudInterval: 3
-  saveOnQuitGame: 1
+  saveCloudInterval: 5
+  saveOnQuitGame: 0
   leaderboardEnable: 1
   leaderboardSimulation:
   - technoName: advanced
@@ -84,8 +84,16 @@ MonoBehaviour:
       rank: 2
       score: 10
   - technoName: simple
-    entries: "Test LeaderBoard\nName: simple\n1. \u0441\u043A\u0440\u044B\u0442:
-      10\n2. Max: 15\n3. Maria: 23"
+    entries: 'Test LeaderBoard
+
+      Name: simple
+
+      1. anonymous: 10
+
+      2.
+      Max: 15
+
+      3. Maria: 23'
     isDefault: 0
     isInvertSortOrder: 0
     decimalOffset: 0
@@ -173,7 +181,7 @@ MonoBehaviour:
     thisPlayer:
       rank: 2
       score: 10
-  LocalizationEnable: 1
+  LocalizationEnable: 0
   callingLanguageCheck: 1
   translateMethod: 0
   domainAutoLocalization: com
@@ -183,7 +191,7 @@ MonoBehaviour:
   languages:
     ru: 1
     en: 1
-    tr: 0
+    tr: 1
     az: 0
     be: 0
     he: 0

@@ -43,7 +43,7 @@ namespace Vanchegs.Interanl.Scripts.ProgressLogic
         {
             yield return new WaitForSeconds(autoSaveCooldown);
 
-            progress?.Save();
+            // progress?.Save();
         }
     }
 }

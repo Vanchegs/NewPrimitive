@@ -9,6 +9,7 @@
 //
 // **************************************************************** //
 
+using System;
 using YG;
 using Zenject;
 using UnityEngine;
@@ -50,8 +51,14 @@ namespace Vanchegs.Interanl.Scripts.Boot
             this.advService = advService;
         }
 
+        private void Awake()
+        {
+            Debug.Log("Awake()");
+        }
+
         private void Start()
         {
+            Debug.Log(" Start()");
             if (YandexGame.SDKEnabled)
                 Load();
 
@@ -59,32 +66,34 @@ namespace Vanchegs.Interanl.Scripts.Boot
             YandexGame.SwitchLangEvent += SwitchLangEvent;
         }
 
-        private void OnDestroy()
-        {
-            YandexGame.SwitchLangEvent -= SwitchLangEvent;
-            YandexGame.GetDataEvent -= Load;
-        }
 
         private void Load()
         {
+            Debug.Log(" Load()");
             curtainService.Init();
-
+            Debug.Log("curtainService.Init()");
             advService.ShowFullScreenADV();
+
+            Debug.Log("Load::ShowCurtain");
 
             curtainService.ShowCurtain(true, HideCurtain);
         }
 
         private void HideCurtain()
         {
+            Debug.Log("HideCurtain::Start");
             curtainService.HideCurtain(curtainConfig.HideDelay);
 
             persistenProgress.Load();
 
+            Debug.Log("HideCurtain::Load");
             sceneLoader.LoadScene(SceneName.MainScene, OnSceneLoadedCallback);
         }
 
         private void OnSceneLoadedCallback()
         {
+            Debug.Log("OnSceneLoadedCallback::MainMenuScene");
+
             var language = currentLanguage switch
             {
                 "ru" => Language.Ru,
@@ -100,7 +109,7 @@ namespace Vanchegs.Interanl.Scripts.Boot
 
         private void SwitchLangEvent(string language)
         {
-            Debug.Log($"<color=magenta>SwitchLangEvent({language})</color>");
+            Debug.Log($"SwitchLangEvent({language})");
             currentLanguage = language;
         }
     }
