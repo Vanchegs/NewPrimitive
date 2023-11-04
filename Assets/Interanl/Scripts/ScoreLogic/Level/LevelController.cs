@@ -1,16 +1,28 @@
+using Zenject;
 using UnityEngine;
+using Vanchegs.Interanl.Scripts.ProgressLogic;
+using Vanchegs.Interanl.Scripts.Infrastructure.Services.LeaderboardLogic;
 
 namespace Vanchegs.Interanl.Scripts.ScoreLogic.Level
 {
-    public class LevelController : MonoBehaviour
+    public sealed class LevelController : MonoBehaviour
     {
         [SerializeField] private LevelView levelView;
-
         private LevelModel levelModel;
+        private ILeaderboard leaderboard;
+        private IPersistenProgress persistenProgress;
+
+        [Inject]
+        private void Constructor(IPersistenProgress persistenProgress, ILeaderboard leaderboard)
+        {
+            this.persistenProgress = persistenProgress;
+            this.leaderboard = leaderboard;
+        }
 
         private void Start()
         {
-            levelModel = new LevelModel();
+            levelModel = new LevelModel(persistenProgress, leaderboard);
+
             levelView.SetLevelModel(levelModel);
             levelModel.SetPrimLevel();
             levelModel.CheckPrimBestLevel();
@@ -22,6 +34,8 @@ namespace Vanchegs.Interanl.Scripts.ScoreLogic.Level
             levelModel.IncrementPrimLevel();
             levelModel.CheckPrimBestLevel();
             levelView.PrimLevelView();
+
+            persistenProgress?.Save();
         }
 
         public void ResetPrimLevelNumber()
@@ -29,6 +43,8 @@ namespace Vanchegs.Interanl.Scripts.ScoreLogic.Level
             levelModel.ResetLevelNumber();
             levelModel.CheckPrimBestLevel();
             levelView.PrimLevelView();
+
+            persistenProgress?.Save();
         }
     }
 }

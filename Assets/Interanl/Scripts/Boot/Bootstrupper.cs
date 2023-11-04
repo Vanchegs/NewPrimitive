@@ -15,27 +15,27 @@ using Vanchegs.Interanl.Scripts.Infrastructure.Constants;
 using Vanchegs.Interanl.Scripts.Infrastructure.Factories;
 using Vanchegs.Interanl.Scripts.Infrastructure.Services.Curtain;
 using Vanchegs.Interanl.Scripts.Infrastructure.Services.SceneLoader;
-using Vanchegs.Interanl.Scripts.Storages;
+using Vanchegs.Interanl.Scripts.ProgressLogic;
 using YG;
 
 namespace Vanchegs.Interanl.Scripts.Boot
 {
-    // TODO: Tasks
-    // Save/Load System
-    // Leaderbords
-    // Testing save system
     [DisallowMultipleComponent]
     public sealed class Bootstrupper : MonoBehaviour
     {
         private IUIFactory uiFactory;
         private ISceneLoaderService sceneLoader;
         private ICurtainService curtainService;
-
-        [SerializeField] private Storage storage;
+        private IPersistenProgress persistenProgress;
 
         [Inject]
-        private void Constructor(IUIFactory uiFactory, ISceneLoaderService sceneLoader, ICurtainService curtainService)
+        private void Constructor(
+            IUIFactory uiFactory,
+            ISceneLoaderService sceneLoader,
+            ICurtainService curtainService,
+            IPersistenProgress persistenProgress)
         {
+            this.persistenProgress = persistenProgress;
             this.curtainService = curtainService;
             this.sceneLoader = sceneLoader;
             this.uiFactory = uiFactory;
@@ -54,24 +54,17 @@ namespace Vanchegs.Interanl.Scripts.Boot
         private void Load()
         {
             curtainService.Init();
-            curtainService.ShowCurtain(true, () =>
-            {
-                curtainService.HideCurtain(1.5f);
 
-                if (YandexGame.savesData.storage == null)
-                {
-                    storage = YandexGame.savesData.storage = new Storage(defaultScore: 666);
+            curtainService.ShowCurtain(true, HideCurtain);
+        }
 
-                    // ,,, 
-                    // ,,,
-                }
-                else
-                    storage = YandexGame.savesData.storage;
+        private void HideCurtain()
+        {
+            curtainService.HideCurtain(1.5f);
 
-                Debug.Log("Loaded");
+            persistenProgress.Load();
 
-                sceneLoader.LoadScene(SceneName.MainScene);
-            });
+            sceneLoader.LoadScene(SceneName.MainScene);
         }
     }
 }

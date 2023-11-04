@@ -1,3 +1,5 @@
+using Vanchegs.Interanl.Scripts.Storages;
+
 namespace Vanchegs.Interanl.Scripts.ScoreLogic.Score
 {
     public class ScoreModel

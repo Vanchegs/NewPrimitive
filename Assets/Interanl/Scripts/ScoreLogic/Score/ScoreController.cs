@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Vanchegs.Interanl.Scripts.EventSystem;
 using Vanchegs.Interanl.Scripts.Infrastructure.Services.Curtain;
+using Vanchegs.Interanl.Scripts.ProgressLogic;
 using Vanchegs.Interanl.Scripts.ScoreLogic.Level;
 using Zenject;
 
@@ -19,10 +20,10 @@ namespace Vanchegs.Interanl.Scripts.ScoreLogic.Score
         private void Start()
         {
             scoreModel = new ScoreModel();
+
             scoreModel.UpNeedScore();
             scoreView.SetViewModel(scoreModel);
             scoreView.PrimScoreView();
-            Debug.Log($"curtain is null??? => {curtain == null}");
 
             curtain.HideCurtain(1, null);
         }
@@ -34,7 +35,9 @@ namespace Vanchegs.Interanl.Scripts.ScoreLogic.Score
             EventPack.OnClickScreen?.Invoke();
 
             if (scoreModel.PrimScore >= scoreModel.NeedPrimScore)
+            {
                 EventPack.OnSwitchToNextLevel?.Invoke();
+            }
         }
 
         public void ReturnPrimScore()
