@@ -17,8 +17,8 @@ namespace Vanchegs.Interanl.Scripts.ScoreLogic.Level
 
         public void PrimLevelView()
         {
-            levelNumberText.text = "" + levelModel.LevelNumber;
-            bestLevelNumberText.text = "" + levelModel.BestLevelNumber;
+            levelNumberText.text = $"{levelModel.LevelNumber}";
+            bestLevelNumberText.text = $"{levelModel.BestLevelNumber}";
         }
     }
 }
