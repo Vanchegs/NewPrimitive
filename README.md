@@ -1,2 +1,3 @@
 # NewPrimitive
- Сorrect version of my game "Primitive"
+## Сorrect version of my game "Primitive"
+
