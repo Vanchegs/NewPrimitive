@@ -1,4 +1,6 @@
-﻿namespace YG
+﻿using Vanchegs.Interanl.Scripts.Storages;
+
+namespace YG
 {
     [System.Serializable]
     public sealed class SavesYG
@@ -7,5 +9,7 @@
         public bool isFirstSession = true;
         public string language = "ru";
         public bool promptDone;
+
+        public Storage storage;
     }
 }

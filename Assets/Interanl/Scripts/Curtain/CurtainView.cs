@@ -11,15 +11,8 @@ namespace Vanchegs.Interanl.Scripts.Curtain
         [SerializeField] private CanvasGroup canvasGroup;
         private float animationDuration = 0.4f;
 
-        private void Awake()
-        {
-            Constructor(animationDuration);
-        }
-
-        public void Constructor(float animationDuration)
-        {
+        public void Constructor(float animationDuration) =>
             this.animationDuration = animationDuration;
-        }
 
         public void ShowCurtain(bool isAnimated, Action callback)
         {

@@ -1,16 +1,18 @@
 using UnityEngine;
 using Vanchegs.Interanl.Scripts.Curtain;
 using Vanchegs.Interanl.Scripts.EventSystem;
+using Vanchegs.Interanl.Scripts.Infrastructure.Services.Curtain;
 using Vanchegs.Interanl.Scripts.TimerLogic;
 using Vanchegs.Interanl.Scripts.ScoreLogic.Score;
 using Vanchegs.Interanl.Scripts.PrimitiveLogic.Factorys;
+using Zenject;
 
 namespace Vanchegs.Interanl.Scripts.ScoreLogic.Level
 {
     [DisallowMultipleComponent]
     public sealed class LevelSwitcher : MonoBehaviour
     {
-        [SerializeField] private CurtainView curtain;
+        [Inject] private ICurtainService curtain;
         [SerializeField] private PrimitiveFactory primitiveFactory;
         [SerializeField] private GameObject button;
         [SerializeField] private Timer timer;
