@@ -28,10 +28,10 @@ MonoBehaviour:
   durationOfAdSimulation: 0.5
   testErrorOfRewardedAdsInEditor: 0
   saveCloud: 1
-  flush: 0
+  flush: 1
   localSaveSync: 1
-  saveCloudInterval: 5
-  saveOnQuitGame: 0
+  saveCloudInterval: 3
+  saveOnQuitGame: 1
   leaderboardEnable: 1
   leaderboardSimulation:
   - technoName: advanced
@@ -181,7 +181,7 @@ MonoBehaviour:
     thisPlayer:
       rank: 2
       score: 10
-  LocalizationEnable: 0
+  LocalizationEnable: 1
   callingLanguageCheck: 1
   translateMethod: 0
   domainAutoLocalization: com
