@@ -19,8 +19,6 @@ namespace Vanchegs.Interanl.Scripts.Curtain
         public void Constructor(float animationDuration)
         {
             this.animationDuration = animationDuration;
-
-            DontDestroyOnLoad(this);
         }
 
         public void ShowCurtain(bool isAnimated, Action callback)
