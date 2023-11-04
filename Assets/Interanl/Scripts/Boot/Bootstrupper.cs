@@ -9,62 +9,99 @@
 //
 // **************************************************************** //
 
+using YG;
 using Zenject;
 using UnityEngine;
-using Vanchegs.Interanl.Scripts.Infrastructure.Constants;
-using Vanchegs.Interanl.Scripts.Infrastructure.Factories;
-using Vanchegs.Interanl.Scripts.Infrastructure.Services.Curtain;
-using Vanchegs.Interanl.Scripts.Infrastructure.Services.SceneLoader;
+using System.Linq;
+using NaughtyAttributes;
+using Vanchegs.Interanl.Scripts.Curtain;
 using Vanchegs.Interanl.Scripts.ProgressLogic;
-using YG;
+using Vanchegs.Interanl.Scripts.Infrastructure.Constants;
+using Vanchegs.Interanl.Scripts.Infrastructure.Services.Adv;
+using Vanchegs.Interanl.Scripts.Infrastructure.Services.Curtain;
+using Vanchegs.Interanl.Scripts.Infrastructure.Services.Localization;
+using Vanchegs.Interanl.Scripts.Infrastructure.Services.SceneLoader;
 
 namespace Vanchegs.Interanl.Scripts.Boot
 {
     [DisallowMultipleComponent]
     public sealed class Bootstrupper : MonoBehaviour
     {
-        private IUIFactory uiFactory;
+        [SerializeField, ReadOnly] private string currentLanguage = "ru";
+
+        private IADVService advService;
         private ISceneLoaderService sceneLoader;
         private ICurtainService curtainService;
         private IPersistenProgress persistenProgress;
+        private CurtainConfig curtainConfig;
 
         [Inject]
         private void Constructor(
-            IUIFactory uiFactory,
+            CurtainConfig curtainConfig,
+            IADVService advService,
             ISceneLoaderService sceneLoader,
             ICurtainService curtainService,
             IPersistenProgress persistenProgress)
         {
+            this.curtainConfig = curtainConfig;
             this.persistenProgress = persistenProgress;
             this.curtainService = curtainService;
             this.sceneLoader = sceneLoader;
-            this.uiFactory = uiFactory;
+            this.advService = advService;
         }
 
         private void Start()
         {
             if (YandexGame.SDKEnabled)
-            {
                 Load();
-            }
 
             YandexGame.GetDataEvent += Load;
+            YandexGame.SwitchLangEvent += SwitchLangEvent;
+        }
+
+        private void OnDestroy()
+        {
+            YandexGame.SwitchLangEvent -= SwitchLangEvent;
+            YandexGame.GetDataEvent -= Load;
         }
 
         private void Load()
         {
             curtainService.Init();
 
+            advService.ShowFullScreenADV();
+
             curtainService.ShowCurtain(true, HideCurtain);
         }
 
         private void HideCurtain()
         {
-            curtainService.HideCurtain(1.5f);
+            curtainService.HideCurtain(curtainConfig.HideDelay);
 
             persistenProgress.Load();
 
-            sceneLoader.LoadScene(SceneName.MainScene);
+            sceneLoader.LoadScene(SceneName.MainScene, OnSceneLoadedCallback);
+        }
+
+        private void OnSceneLoadedCallback()
+        {
+            var language = currentLanguage switch
+            {
+                "ru" => Language.Ru,
+                "en" => Language.En,
+                _ => Language.Ru
+            };
+
+            foreach (var localizationComponents in FindObjectsOfType<SetLanguage>().Where(x => x != null).ToList())
+            {
+                localizationComponents.UpdateLanguage(language);
+            }
+        }
+
+        private void SwitchLangEvent(string language)
+        {
+            Debug.Log($"<color=magenta>SwitchLangEvent({language})</color>");
+            currentLanguage = language;
         }
     }
 }

@@ -10,6 +10,7 @@
 // **************************************************************** //
 
 using UnityEngine;
+using Vanchegs.Interanl.Scripts.Infrastructure.Services.Adv;
 using Vanchegs.Interanl.Scripts.Infrastructure.Services.CoroutineRunner;
 using Vanchegs.Interanl.Scripts.Infrastructure.Services.Curtain;
 using Vanchegs.Interanl.Scripts.Infrastructure.Services.LeaderboardLogic;
@@ -28,6 +29,7 @@ namespace Vanchegs.Interanl.Scripts.Infrastructure.Installers
             Container.Bind<ISceneLoaderService>().To<SceneLoaderService>().AsSingle();
             Container.Bind<IPersistenProgress>().To<PersistenProgress>().AsSingle();
             Container.Bind<ILeaderboard>().To<Leaderboard>().AsSingle();
+            Container.Bind<IADVService>().To<ADVService>().AsSingle();
             Container.Bind<ICoroutineRunner>().FromInstance(this).AsSingle();
         }
     }

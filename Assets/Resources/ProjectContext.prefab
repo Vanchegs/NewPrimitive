@@ -137,6 +137,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5a4c5d2524c411ba4579024a05f09d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurtainConfig: {fileID: 11400000, guid: b358c24c5ea383d4cb9fd35d4d4d893d, type: 2}
+  LocalizationCollection: {fileID: 11400000, guid: 73963cc82984ac84dae4b2d121651cd8, type: 2}
 --- !u!114 &7433879103826509330
 MonoBehaviour:
   m_ObjectHideFlags: 0

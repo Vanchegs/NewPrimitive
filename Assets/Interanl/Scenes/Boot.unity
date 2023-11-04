@@ -228,8 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec154ba4bbc4e20b228167074da5c90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  storage:
-    bestScore: 0
+  currentLanguage: ru
 --- !u!4 &908844028
 Transform:
   m_ObjectHideFlags: 0
