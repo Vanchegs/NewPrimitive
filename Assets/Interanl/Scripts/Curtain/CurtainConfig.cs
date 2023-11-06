@@ -15,8 +15,5 @@ namespace Vanchegs.Interanl.Scripts.Curtain
         public float HideDelay { get; private set; } = 1.3f;
 
         [field: SerializeField] public float AnimationDuration { get; private set; } = 1.5f;
-
-        [field: SerializeField, ShowAssetPreview(256, 256)]
-        public Sprite Icon { get; private set; }
     }
 }
