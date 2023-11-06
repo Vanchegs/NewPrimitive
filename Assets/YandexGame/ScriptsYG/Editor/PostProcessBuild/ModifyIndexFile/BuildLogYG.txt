@@ -1,2 +1,2 @@
-Build path: C:/RimuruDev/NewPrimitive/Build/NewPrimitive_1.0.0.0.r
-Build number: 21
+Build path: C:/Games/PrimitiveBuild
+Build number: 22

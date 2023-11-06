@@ -1,11 +1,14 @@
 ﻿// **************************************************************** //
 //
-//   Copyright (c) RimuruDev. All rights reserved.
-//   Contact me: 
+//   Copyright (c) Vanchegs and RimuruDev. All rights reserved.
+//   Project: Primitime 2023
+//   Contact: 
+//         Vanchegs
+//           - GitHub:   https://github.com/Vanchegs
+//           - Gmail:    manshin9300@gmail.com
+//         RimuruDev
 //          - Gmail:    rimuru.dev@gmail.com
-//          - GitHub:   https://github.com/RimuruDev
 //          - LinkedIn: https://www.linkedin.com/in/rimuru/
-//          - GitHub Organizations: https://github.com/Rimuru-Dev
 //
 // **************************************************************** //
 
