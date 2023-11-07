@@ -2,6 +2,6 @@
 {
     public readonly struct AssetPath
     {
-        public const string Curtain = "StaticData/Curtain/Curtain";
+        public const string CurtainConfig = "StaticData/Curtain/CurtainConfig";
     }
 }

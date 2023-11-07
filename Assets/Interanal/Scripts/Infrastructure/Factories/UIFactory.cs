@@ -8,7 +8,7 @@ namespace Vanchegs.Interanl.Scripts.Infrastructure.Factories
     {
         public CurtainView CreateCurtain()
         {
-            var config = Resources.Load<CurtainConfig>(AssetPath.Curtain);
+            var config = Resources.Load<CurtainConfig>(AssetPath.CurtainConfig);
 
             var view = Object.Instantiate(config.CurtainView);
             view.Constructor(config.AnimationDuration);
