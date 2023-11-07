@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 Build path: C:/Games/PrimitiveBuild
 Build number: 22
+=======
+Build path: C:/RimuruDev/NewPrimitive/Build/0.0.0.7
+Build number: 20
+>>>>>>> parent of 49853bb (Build relese)

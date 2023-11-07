@@ -20,28 +20,28 @@ namespace Vanchegs.Interanl.Scripts.ProgressLogic
 {
     public sealed class PersistenProgress : IPersistenProgress
     {
-        public Storage Storage { get; private set; }
+        public Storage Storage { get; private set; } = YandexGame.savesData.storage = new Storage();
 
         public void Save()
         {
             if (!YandexGame.SDKEnabled)
                 return;
 
-            Storage ??= Load();
-
-            YandexGame.savesData.storage = Storage;
-
-            YandexGame.SaveProgress();
+            // Storage ??= Load();
+            //
+            // YandexGame.savesData.storage = Storage;
+            //
+            // YandexGame.SaveProgress();
         }
 
         public Storage Load(Action callback = null)
         {
-            if (YandexGame.savesData.storage == null)
-                Storage = YandexGame.savesData.storage = new Storage();
-            else
-                Storage = YandexGame.savesData.storage;
-
-            callback?.Invoke();
+            // if (YandexGame.savesData.storage == null)
+            //     Storage = YandexGame.savesData.storage = new Storage();
+            // else
+            //     Storage = YandexGame.savesData.storage;
+            //
+            // callback?.Invoke();
 
             return Storage;
         }
