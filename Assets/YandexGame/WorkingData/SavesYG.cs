@@ -3,7 +3,7 @@
 namespace YG
 {
     [System.Serializable]
-    public sealed class SavesYG
+    public class SavesYG
     {
         public int idSave;
         public bool isFirstSession = true;
