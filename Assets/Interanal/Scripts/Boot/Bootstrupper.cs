@@ -81,6 +81,9 @@ namespace Vanchegs.Interanl.Scripts.Boot
 
         private void HideCurtain()
         {
+            Debug.Log("Start GRA");
+            YandexGame.GameReadyAPI();
+            
             Debug.Log("HideCurtain::Start");
             curtainService.HideCurtain(curtainConfig.HideDelay);
 

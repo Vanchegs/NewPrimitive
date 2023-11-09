@@ -21,8 +21,10 @@ MonoBehaviour:
     name: Player this
     uniqueID: 000
     photo: https://justplaygames.ru/public/icon_player.png
+  autoGameReadyAPI: 0
   AdWhenLoadingScene: 1
-  showFirstAd: 1
+  showFirstAd: 0
+  rewardedAfterClosing: 1
   adDisplayCalls: 0
   fullscreenAdInterval: 60
   durationOfAdSimulation: 0.5
@@ -84,16 +86,8 @@ MonoBehaviour:
       rank: 2
       score: 10
   - technoName: simple
-    entries: 'Test LeaderBoard
-
-      Name: simple
-
-      1. anonymous: 10
-
-      2.
-      Max: 15
-
-      3. Maria: 23'
+    entries: "Test LeaderBoard\nName: simple\n1. \u0441\u043A\u0440\u044B\u0442:
+      10\n2. Max: 15\n3. Maria: 23"
     isDefault: 0
     isInvertSortOrder: 0
     decimalOffset: 0
@@ -132,7 +126,7 @@ MonoBehaviour:
     thisPlayer:
       rank: 0
       score: 0
-  - technoName: time
+  - technoName: time1
     entries: 'Test LeaderBoard
 
       Name: time
@@ -181,7 +175,7 @@ MonoBehaviour:
     thisPlayer:
       rank: 2
       score: 10
-  LocalizationEnable: 0
+  LocalizationEnable: 1
   callingLanguageCheck: 1
   translateMethod: 0
   domainAutoLocalization: com
