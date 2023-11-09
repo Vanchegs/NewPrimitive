@@ -1,4 +1,3 @@
-<<<<<<< HEAD:Assets/Interanl/Scripts/Infrastructure/Services/Curtain/CurtainService.cs
 // **************************************************************** //
 //
 //   Copyright (c) Vanchegs and RimuruDev. All rights reserved.
@@ -12,9 +11,6 @@
 //          - LinkedIn: https://www.linkedin.com/in/rimuru/
 //
 // **************************************************************** //
-
-=======
->>>>>>> main:Assets/Interanal/Scripts/Infrastructure/Services/Curtain/CurtainService.cs
 using System;
 using Zenject;
 using Vanchegs.Interanl.Scripts.Curtain;

@@ -1,4 +1,3 @@
-<<<<<<< HEAD:Assets/Interanl/Scripts/ScoreLogic/Score/ScoreController.cs
 // **************************************************************** //
 //
 //   Copyright (c) Vanchegs and RimuruDev. All rights reserved.
@@ -12,9 +11,6 @@
 //          - LinkedIn: https://www.linkedin.com/in/rimuru/
 //
 // **************************************************************** //
-
-=======
->>>>>>> main:Assets/Interanal/Scripts/ScoreLogic/Score/ScoreController.cs
 using UnityEngine;
 using Vanchegs.Interanl.Scripts.EventSystem;
 using Vanchegs.Interanl.Scripts.Infrastructure.Services.Curtain;

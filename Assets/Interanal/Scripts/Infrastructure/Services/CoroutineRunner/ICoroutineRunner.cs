@@ -1,5 +1,4 @@
-<<<<<<< HEAD:Assets/Interanl/Scripts/Infrastructure/Services/CoroutineRunner/ICoroutineRunner.cs
-﻿// **************************************************************** //
+// **************************************************************** //
 //
 //   Copyright (c) Vanchegs and RimuruDev. All rights reserved.
 //   Project: Primitime 2023
@@ -12,11 +11,8 @@
 //          - LinkedIn: https://www.linkedin.com/in/rimuru/
 //
 // **************************************************************** //
-
 using System.Collections;
-=======
-﻿using System.Collections;
->>>>>>> main:Assets/Interanal/Scripts/Infrastructure/Services/CoroutineRunner/ICoroutineRunner.cs
+using System.Collections;
 using UnityEngine;
 
 namespace Vanchegs.Interanl.Scripts.Infrastructure.Services.CoroutineRunner

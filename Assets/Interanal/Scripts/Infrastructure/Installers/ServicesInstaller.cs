@@ -1,5 +1,4 @@
-<<<<<<< HEAD:Assets/Interanl/Scripts/Infrastructure/Installers/ServicesInstaller.cs
-﻿// **************************************************************** //
+// **************************************************************** //
 //
 //   Copyright (c) Vanchegs and RimuruDev. All rights reserved.
 //   Project: Primitime 2023
@@ -14,9 +13,6 @@
 // **************************************************************** //
 
 using UnityEngine;
-=======
-﻿using UnityEngine;
->>>>>>> main:Assets/Interanal/Scripts/Infrastructure/Installers/ServicesInstaller.cs
 using Vanchegs.Interanl.Scripts.Infrastructure.Services.Adv;
 using Vanchegs.Interanl.Scripts.Infrastructure.Services.CoroutineRunner;
 using Vanchegs.Interanl.Scripts.Infrastructure.Services.Curtain;

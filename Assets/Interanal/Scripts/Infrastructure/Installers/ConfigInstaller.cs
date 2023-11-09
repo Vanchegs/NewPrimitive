@@ -1,5 +1,4 @@
-<<<<<<< HEAD:Assets/Interanl/Scripts/Infrastructure/Installers/ConfigInstaller.cs
-﻿// **************************************************************** //
+// **************************************************************** //
 //
 //   Copyright (c) Vanchegs and RimuruDev. All rights reserved.
 //   Project: Primitime 2023
@@ -12,14 +11,9 @@
 //          - LinkedIn: https://www.linkedin.com/in/rimuru/
 //
 // **************************************************************** //
-
 using NaughtyAttributes;
-=======
-﻿using NaughtyAttributes;
->>>>>>> main:Assets/Interanal/Scripts/Infrastructure/Installers/ConfigInstaller.cs
 using UnityEngine;
 using Vanchegs.Interanl.Scripts.Curtain;
-using Vanchegs.Interanl.Scripts.Infrastructure.Services.Localization;
 using Zenject;
 
 namespace Vanchegs.Interanl.Scripts.Infrastructure.Installers

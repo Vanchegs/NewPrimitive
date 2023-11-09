@@ -1,5 +1,4 @@
-<<<<<<< HEAD:Assets/Interanl/Scripts/Infrastructure/Factories/UIFactory.cs
-﻿// **************************************************************** //
+// **************************************************************** //
 //
 //   Copyright (c) Vanchegs and RimuruDev. All rights reserved.
 //   Project: Primitime 2023
@@ -12,11 +11,7 @@
 //          - LinkedIn: https://www.linkedin.com/in/rimuru/
 //
 // **************************************************************** //
-
 using UnityEngine;
-=======
-﻿using UnityEngine;
->>>>>>> main:Assets/Interanal/Scripts/Infrastructure/Factories/UIFactory.cs
 using Vanchegs.Interanl.Scripts.Curtain;
 using Vanchegs.Interanl.Scripts.Infrastructure.Constants;
 
