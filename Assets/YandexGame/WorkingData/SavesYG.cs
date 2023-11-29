@@ -1,4 +1,4 @@
-﻿using Vanchegs.Interanl.Scripts.Storages;
+﻿using Vanchegs.Interanl.Scripts.ProgressLogic;
 
 namespace YG
 {
@@ -10,6 +10,6 @@ namespace YG
         public string language = "ru";
         public bool promptDone;
 
-        public Storage storage;
+        public IPersistenProgress PersistenProgress;
     }
 }

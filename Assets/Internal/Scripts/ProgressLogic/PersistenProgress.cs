@@ -1,33 +1,34 @@
-﻿// **************************************************************** //
-//
-//   Copyright (c) RimuruDev. All rights reserved.
-//   Contact me: 
-//          - Gmail:    rimuru.dev@gmail.com
-//          - GitHub:   https://github.com/RimuruDev
-//          - LinkedIn: https://www.linkedin.com/in/rimuru/
-//          - GitHub Organizations: https://github.com/Rimuru-Dev
-//
-// **************************************************************** //
-
-using YG;
+﻿using YG;
 using System;
-using Vanchegs.Interanl.Scripts.Storages;
+using Vanchegs.Interanl.Scripts.ScoreLogic.Level;
+using Zenject;
 
 namespace Vanchegs.Interanl.Scripts.ProgressLogic
 {
     public sealed class PersistenProgress : IPersistenProgress
     {
-        public Storage Storage { get; private set; } = YandexGame.savesData.storage = new Storage();
+        public int BestLevel { get; set; }
+
+        private LevelController levelController;
+        
+        [Inject]
+        private void Constructor(LevelController levelController)
+        {
+            this.levelController = levelController;
+        }
 
         public void Save()
         {
             if (!YandexGame.SDKEnabled)
                 return;
+
+            BestLevel = levelController.LevelModel.BestLevelNumber;
+            YandexGame.SaveProgress();
         }
 
-        public Storage Load(Action callback = null)
+        public int Load(Action callback = null)
         {
-            return Storage;
+            return BestLevel;
         }
     }
 }

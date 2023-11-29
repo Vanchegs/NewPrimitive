@@ -1,6 +1,5 @@
 using Vanchegs.Interanl.Scripts.Infrastructure.Services.LeaderboardLogic;
 using Vanchegs.Interanl.Scripts.ProgressLogic;
-using Vanchegs.Interanl.Scripts.Storages;
 
 namespace Vanchegs.Interanl.Scripts.ScoreLogic.Level
 {
@@ -9,13 +8,13 @@ namespace Vanchegs.Interanl.Scripts.ScoreLogic.Level
         private readonly IPersistenProgress persistenProgress;
         private readonly ILeaderboard leaderboard;
         public int LevelNumber { get; private set; }
-        public int BestLevelNumber { get; private set; }
+        public int BestLevelNumber { get; set; }
 
         public LevelModel(IPersistenProgress persistenProgress, ILeaderboard leaderboard)
         {
             this.persistenProgress = persistenProgress;
             this.leaderboard = leaderboard;
-            BestLevelNumber = this.persistenProgress.Storage.bestLevel;
+            BestLevelNumber = this.persistenProgress.BestLevel;
         }
 
         public void IncrementPrimLevel() => LevelNumber++;
@@ -29,8 +28,8 @@ namespace Vanchegs.Interanl.Scripts.ScoreLogic.Level
             if (LevelNumber > BestLevelNumber - 1)
             {
                 BestLevelNumber = LevelNumber;
-                persistenProgress.Storage.bestLevel = BestLevelNumber;
-                leaderboard?.UpdateLeaderboard(persistenProgress.Storage.bestLevel);
+                persistenProgress.BestLevel = BestLevelNumber;
+                leaderboard?.UpdateLeaderboard(persistenProgress.BestLevel);
             }
         }
     }

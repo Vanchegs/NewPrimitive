@@ -1,5 +1,4 @@
 using UnityEngine;
-using Vanchegs.Interanl.Scripts.Curtain;
 using Vanchegs.Interanl.Scripts.EventSystem;
 using Vanchegs.Interanl.Scripts.Infrastructure.Services.Curtain;
 using Vanchegs.Interanl.Scripts.TimerLogic;

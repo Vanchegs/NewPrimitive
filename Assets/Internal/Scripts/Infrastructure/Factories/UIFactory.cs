@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using Vanchegs.Interanl.Scripts.Curtain;
 using Vanchegs.Interanl.Scripts.Infrastructure.Constants;
+using Vanchegs.Internal.Scripts.Infrastructure.Constants;
 
 namespace Vanchegs.Interanl.Scripts.Infrastructure.Factories
 {

@@ -1,29 +1,18 @@
-﻿// **************************************************************** //
-//
-//   Copyright (c) RimuruDev. All rights reserved.
-//   Contact me: 
-//          - Gmail:    rimuru.dev@gmail.com
-//          - GitHub:   https://github.com/RimuruDev
-//          - LinkedIn: https://www.linkedin.com/in/rimuru/
-//          - GitHub Organizations: https://github.com/Rimuru-Dev
-//
-// **************************************************************** //
-
-using System;
-using YG;
+﻿using YG;
 using Zenject;
-using UnityEngine;
 using System.Linq;
+using UnityEngine;
 using NaughtyAttributes;
 using Vanchegs.Interanl.Scripts.Curtain;
-using Vanchegs.Interanl.Scripts.ProgressLogic;
 using Vanchegs.Interanl.Scripts.Infrastructure.Constants;
 using Vanchegs.Interanl.Scripts.Infrastructure.Services.Adv;
 using Vanchegs.Interanl.Scripts.Infrastructure.Services.Curtain;
 using Vanchegs.Interanl.Scripts.Infrastructure.Services.Localization;
 using Vanchegs.Interanl.Scripts.Infrastructure.Services.SceneLoader;
+using Vanchegs.Interanl.Scripts.ProgressLogic;
 
-namespace Vanchegs.Interanl.Scripts.Boot
+
+namespace Vanchegs.Internal.Scripts.Boot
 {
     [DisallowMultipleComponent]
     public sealed class Bootstrupper : MonoBehaviour
@@ -82,7 +71,6 @@ namespace Vanchegs.Interanl.Scripts.Boot
         private void HideCurtain()
         {
             Debug.Log("Start GRA");
-            YandexGame.GameReadyAPI();
             
             Debug.Log("HideCurtain::Start");
             curtainService.HideCurtain(curtainConfig.HideDelay);
@@ -108,6 +96,8 @@ namespace Vanchegs.Interanl.Scripts.Boot
             {
                 localizationComponents.UpdateLanguage(language);
             }
+            
+            YandexGame.GameReadyAPI();
         }
 
         private void SwitchLangEvent(string language)
