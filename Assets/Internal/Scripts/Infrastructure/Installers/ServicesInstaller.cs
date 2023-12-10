@@ -6,10 +6,11 @@ using Vanchegs.Interanl.Scripts.Infrastructure.Services.LeaderboardLogic;
 using Vanchegs.Interanl.Scripts.Infrastructure.Services.SceneLoader;
 using Vanchegs.Interanl.Scripts.ProgressLogic;
 using Vanchegs.Interanl.Scripts.ScoreLogic.Level;
+using Vanchegs.Internal.Scripts.Infrastructure.Services.Curtain;
 using Vanchegs.Internal.Scripts.ScoreLogic.Level;
 using Zenject;
 
-namespace Vanchegs.Interanl.Scripts.Infrastructure.Installers
+namespace Vanchegs.Internal.Scripts.Infrastructure.Installers
 {
     [DisallowMultipleComponent]
     public sealed class ServicesInstaller : MonoInstaller, ICoroutineRunner

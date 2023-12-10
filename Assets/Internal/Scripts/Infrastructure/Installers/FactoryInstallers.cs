@@ -1,8 +1,8 @@
-﻿using Zenject;
-using UnityEngine;
+﻿using UnityEngine;
 using Vanchegs.Interanl.Scripts.Infrastructure.Factories;
+using Zenject;
 
-namespace Vanchegs.Interanl.Scripts.Infrastructure.Installers
+namespace Vanchegs.Internal.Scripts.Infrastructure.Installers
 {
     [DisallowMultipleComponent]
     public sealed class FactoryInstallers : MonoInstaller

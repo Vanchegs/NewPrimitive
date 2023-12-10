@@ -1,9 +1,10 @@
 using System;
-using Zenject;
 using Vanchegs.Interanl.Scripts.Curtain;
 using Vanchegs.Interanl.Scripts.Infrastructure.Factories;
+using Vanchegs.Interanl.Scripts.Infrastructure.Services.Curtain;
+using Zenject;
 
-namespace Vanchegs.Interanl.Scripts.Infrastructure.Services.Curtain
+namespace Vanchegs.Internal.Scripts.Infrastructure.Services.Curtain
 {
     public sealed class CurtainService : ICurtainService
     {
